@@ -124,7 +124,7 @@ func (t *SimpleChaincode) invoke(stub shim.ChaincodeStubInterface, args []string
 	}
 	Aval = Aval - X
 	Bval = Bval + X
-	fmt.Printf("Aval = %d, Bval = %d\n", Aval, Bval)
+	//fmt.Printf("Aval = %d, Bval = %d\n", Aval, Bval)
 
 	// Write the state back to the ledger
 	err = stub.PutState(A, []byte(strconv.Itoa(Aval)))
@@ -182,7 +182,7 @@ func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, args []string)
 	}
 
 	jsonResp := "{\"Name\":\"" + A + "\",\"Amount\":\"" + string(Avalbytes) + "\"}"
-	fmt.Printf("Query Response:%s\n", jsonResp)
+	//fmt.Printf("Query Response:%s\n", jsonResp)
 
 	return shim.Success(Avalbytes)
 }
